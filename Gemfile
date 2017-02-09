@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2'
-gem "haml-rails"
+gem 'haml-rails'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 
