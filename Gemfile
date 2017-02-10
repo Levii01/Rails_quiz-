@@ -34,6 +34,7 @@ gem 'devise', '~> 4.2'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
