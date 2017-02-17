@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20170209185100) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.string   "answer",      null: false
-    t.boolean  "correct",     null: false
-    t.integer  "question_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "answer",                      null: false
+    t.boolean  "correct",     default: false, null: false
+    t.integer  "question_id",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
   end
 
@@ -35,13 +35,6 @@ ActiveRecord::Schema.define(version: 20170209185100) do
   create_table "quizzes", force: :cascade do |t|
     t.string   "title",       null: false
     t.string   "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "quizzs", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -73,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170209185100) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "questions", "quizzs"
-  add_foreign_key "scores", "quizzs"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "scores", "quizzes"
   add_foreign_key "scores", "users"
 end

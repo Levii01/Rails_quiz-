@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
   belongs_to :quizz
-  has_meny :answer
+  has_many :answer
 end
