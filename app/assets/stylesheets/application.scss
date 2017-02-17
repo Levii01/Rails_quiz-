@@ -12,15 +12,20 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 $body-bg: #11135d;
 $text-color: #c3fffe;
 $jumbotron-bg: #3190b4;
+$navbar-default-bg: #f0ff13;
+$navbar-default-color: #0ebecd;
+$navbar-default-link-color: #0ebecd;
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "utilities/mixins";
+@import "font-awesome";
 
 // z-indices
 $z-index-1: 100;
@@ -29,6 +34,30 @@ $z-index-2: 200;
 // font-size
 $fs-0: 50px;
 
+// override for the 'Home' navigation link
+// .navbar-brand {
+//   font-size: inherit;
+// }
+
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @extend .container;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 50px; // accommodate the navbar
+  padding: 0; // accommodate the navbar
+
+  .container {
+    padding-top: 50px;
+  }
+}
+
+section {
+  @extend .row;
+  margin-top: 20px;
+}
+
 .bg {
   @include fixed(20px 0 left 0);
   @include sizing(100%);
@@ -36,6 +65,18 @@ $fs-0: 50px;
   background-size: cover;
   z-index: $z-index-1;
   top: 0;
+  margin-top: 40px;
+
+}
+
+.header {
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background:transparent;
+  font-size: $fs-0;
+  z-index: $z-index-2;
+  margin-top: 100px;
+  padding-left:  50px;
 }
 
 .breadcrumbs {

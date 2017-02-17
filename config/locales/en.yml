@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  navbar:
+    quiz: Quizz List
+    name: QuizzApp
+    logout: Logout
+    signin: Sign in
+    signup: Sign up
