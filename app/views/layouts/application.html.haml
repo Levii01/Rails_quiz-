@@ -9,4 +9,7 @@
   %body
     %p.notice= notice
     %p.alert= alert
-    = yield
+    .container
+      .row
+        .col-xs-10.col-xs-offset-1
+          = yield
