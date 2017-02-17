@@ -20,3 +20,36 @@ $jumbotron-bg: #3190b4;
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "utilities/mixins";
+
+// z-indices
+$z-index-1: 100;
+$z-index-2: 200;
+
+// font-size
+$fs-0: 50px;
+
+.bg {
+  @include fixed(20px 0 left 0);
+  @include sizing(100%);
+  background: url(quiz.jpg) no-repeat center center;
+  background-size: cover;
+  z-index: $z-index-1;
+  top: 0;
+}
+
+.breadcrumbs {
+  padding-bottom: 30px;
+
+  a:first-child {
+    padding: 0 5px 0 0;
+  }
+
+  a, .current {
+    padding: 0 5px;
+  }
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
