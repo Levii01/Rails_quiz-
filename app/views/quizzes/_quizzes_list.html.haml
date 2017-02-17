@@ -1,0 +1,10 @@
+- @quizzes.each_with_index do |quizz, i|
+  %tr.quizzes-width
+    %td.number.btn-primary
+      %h1
+        = i + 1
+    %td.desc
+      %h3.dupa
+        = link_to quizz.title, quizz
+      %strong
+        =quizz.description

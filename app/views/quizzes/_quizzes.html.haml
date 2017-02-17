@@ -1,0 +1,18 @@
+%table.table.table-condensed
+  %thead
+    %tr
+      %th Quizz
+      %th Actions
+
+  %tbody
+    - @quizzes.each do |quizz|
+      %tr
+        %td
+          %h4
+            = quizz.title
+          %p
+            = quizz.description
+        %td
+          = link_to 'Show', quizz
+          = link_to 'Edit', edit_quizz_path(quizz)
+          = link_to 'Destroy', quizz, :method => :delete, :data => { :confirm => 'Are you sure?' }

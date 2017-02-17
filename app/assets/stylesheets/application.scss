@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+$body-bg: #11135d;
+$text-color: #c3fffe;
+$jumbotron-bg: #3190b4;
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
