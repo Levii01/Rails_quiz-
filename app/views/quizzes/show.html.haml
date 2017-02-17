@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @quizz.title
+%p
+  %b Description:
+  = @quizz.description
+
+= link_to 'Edit', edit_quizz_path(@quizz)
+\|
+= link_to 'Back', quizzes_path
