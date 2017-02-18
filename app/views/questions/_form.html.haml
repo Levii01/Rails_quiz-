@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :title
-    = f.input :quizz_id
+    = f.association :quizz, collection: Quizz.all
 
   .form-actions
     = f.button :submit
