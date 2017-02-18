@@ -1,8 +1,8 @@
 %table.table.table-condensed
   %thead
     %tr
-      %th Quizz
-      %th Actions
+      %th= t('shared.quizz')
+      %th= t('shared.action')
 
   %tbody
     - @quizzes.each do |quizz|
@@ -13,6 +13,12 @@
           %p
             = quizz.description
         %td
-          = link_to 'Show', quizz
-          = link_to 'Edit', edit_quizz_path(quizz)
-          = link_to 'Destroy', quizz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          = link_to quizz, { title: t('shared.edit')} do
+            %button.btn.btn-info
+              = fa_icon "search"
+          = link_to  edit_quizz_path(quizz), { title: t('shared.back')} do
+            %button.btn.btn-info
+              = fa_icon "edit"
+          = link_to quizz, { title: t('shared.destroy'), :method => :delete } do
+            %button.btn.btn-info
+              = fa_icon "times"

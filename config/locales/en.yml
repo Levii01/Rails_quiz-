@@ -26,3 +26,17 @@ en:
     logout: Logout
     signin: Sign in
     signup: Sign up
+  shared:
+    created: "%{resource} has been created!"
+    updated: "%{resource} has been updated!"
+    deleted: "%{resource} has been deleted!"
+    actions: Actions
+    edit: Edit
+    show: Show
+    delete: Delete
+    back: Back
+    action: Actions
+    quizz: Quizz
+  quizz:
+    title: Title
+    description: description

@@ -1,12 +1,13 @@
-%p#notice= notice
+.jumbotron
+  %p#notice= notice
 
-%p
-  %b Title:
-  = @quizz.title
-%p
-  %b Description:
-  = @quizz.description
-
-= link_to 'Edit', edit_quizz_path(@quizz)
-\|
-= link_to 'Back', quizzes_path
+  %p
+    %b #{t('shared.title')}:
+    %br= @quizz.title
+  %p
+    %b #{t('shared.description')}:
+    %br= @quizz.description
+.btn-group{role: :group}
+  = link_to t('shared.back'), quizzes_path, class: 'btn btn-info'
+  = link_to t('shared.edit'), edit_quizz_path(@quizz), class: 'btn btn-info'
+  = link_to t('shared.destroy'), @quizz, :method => :delete, class: 'btn btn-info'

@@ -1,9 +1,9 @@
 .row
   .col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
-    %h1.title.text-center Quizz list
+    %h1.title.text-center= t('navbar.quiz')
     %table.table.table-striped
       %tbody
-        = render 'quizzes_list'
+        = render 'quizzes'
     %br
     = link_to 'Create new Quizz!', new_quizz_path, class: 'btn btn-default btn-block'
 .pause

@@ -28,7 +28,7 @@ class QuizzesController < ApplicationController
 
     respond_to do |format|
       if @quizz.save
-        format.html { redirect_to @quizz, notice: 'Quizz was successfully created.' }
+        format.html { redirect_to quizz_path(@quizz), notice: I18n.t('shared.updated', resource: 'Quizz') }
         format.json { render :show, status: :created, location: @quizz }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class QuizzesController < ApplicationController
   def update
     respond_to do |format|
       if @quizz.update(quizz_params)
-        format.html { redirect_to @quizz, notice: 'Quizz was successfully updated.' }
+        format.html { redirect_to @quizz, notice: I18n.t('shared.deleted', resource: 'Quizz') }
         format.json { render :show, status: :ok, location: @quizz }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class QuizzesController < ApplicationController
   def destroy
     @quizz.destroy
     respond_to do |format|
-      format.html { redirect_to quizzes_url, notice: 'Quizz was successfully destroyed.' }
+      format.html { redirect_to quizzes_url, notice: I18n.t('shared.deleted', resource: 'Quizz') }
       format.json { head :no_content }
     end
   end
