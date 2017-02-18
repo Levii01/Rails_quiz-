@@ -1,12 +1,22 @@
 .jumbotron
   %p#notice= notice
 
-  %p
-    %b #{t('shared.title')}:
-    %br= @quizz.title
-  %p
+  %h1.text-center
+    %b #{t('shared.title')}: #{@quizz.title.capitalize}
+  %h3
     %b #{t('shared.description')}:
-    %br= @quizz.description
+    %br= @quizz.description.capitalize
+
+  -@quizz.question.each_with_index do |question, i|
+    %h3
+      %b #{i+1}. #{question.title.capitalize}?:
+    .row
+      .col-md-8.col-md-offset-2
+        -question.answer.each_with_index  do |answer, j|
+          .col-md-6
+            %h4 #{j+1}. #{answer.answer.capitalize}
+            %p= answer.correct
+    .pause
 .btn-group{role: :group}
   = link_to t('shared.back'), quizzes_path, class: 'btn btn-info'
   = link_to t('shared.edit'), edit_quizz_path(@quizz), class: 'btn btn-info'
