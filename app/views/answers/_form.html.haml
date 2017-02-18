@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :answer
     = f.input :correct
-    = f.input :question_id
+    = f.association :question, collection: Question.all
 
   .form-actions
     = f.button :submit
